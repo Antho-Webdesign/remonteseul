@@ -105,5 +105,16 @@ def profile(request):
 
 @login_required
 def delete_user(request):
+    try:
+        u = request.user
+        u.delete()
+        messages.success(request, "The user is deleted")
+
+    except User.DoesNotExist:
+        messages.error(request, "User doesnot exist")
+        return render(request, 'users/deleteuser.html')
+
+    except Exception as e:
+        return render(request, 'users/deleteuser.html', {'err': e.message})
 
     return render(request, 'users/deleteuser.html')
