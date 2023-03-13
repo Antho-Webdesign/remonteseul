@@ -36,9 +36,9 @@
             que voulez vous reparer ?
         </p>
 
-    <div class="d-flex">
+    <div class="d-flex"  style="background: grey; ">
             {% for marque in marques %}
-                <div style="background: grey; display: flex; flex-direction: column; width: 10%; text-align: center;">
+                <div style="display: flex; flex-direction: column; width: 10%; text-align: center;">
                     <img src="{{ marque.logo.url }}" alt="">
                 </div>
             {% endfor %}
@@ -52,6 +52,8 @@
                 </div>
             {% endfor %}
         </div>
+
+
 
         <hr class="my-4">
 

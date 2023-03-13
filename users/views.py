@@ -1,23 +1,24 @@
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib.auth.views import LoginView, PasswordResetView, PasswordChangeView
+from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.contrib.auth.views import LoginView, PasswordResetView, PasswordChangeView
-from django.contrib import messages
-from django.contrib.messages.views import SuccessMessageMixin
 from django.views import View
-from django.contrib.auth.decorators import login_required
-from social_core.backends import username
 
-from boutique.models import Category, Marques
+from boutique.models import Category, Marques, Device
 from .forms import RegisterForm, LoginForm, UpdateUserForm, UpdateProfileForm
 
 
 def home(request):
     categories = Category.objects.all()
     marque = Marques.objects.all()
+    # evice = Devices.objects.all()
     context = {
         'categorie': categories,
         'marques': marque,
+        # 'devices' : device,
     }
     return render(request, 'users/home.html', context)
 
