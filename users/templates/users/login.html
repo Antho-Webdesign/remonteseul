@@ -1,5 +1,5 @@
 {% extends "users/base.html" %}
-{% block title %} Login Page {% endblock title%}
+{% block title %} Login Page {% endblock title %}
 {% block content %}
     <div class="form-content my-3 p-3">
         <div class="container">
@@ -7,7 +7,7 @@
                 <div class="col-lg-5">
                     <div class="card shadow-lg border-0 rounded-lg mt-0 mb-3">
                         <div class="card-header justify-content-center">
-                          <h3 class="font-weight-light my-1 text-center">Sign In</h3>
+                            <h3 class="font-weight-light my-1 text-center">Sign In</h3>
                         </div>
                         {% if form.errors %}
                             <div class="alert alert-danger alert-dismissible" role="alert">
@@ -28,9 +28,9 @@
                                     <div class="col-md-10 offset-md-1">
                                         <div class="form-group">
                                             <a href="{% url 'social:begin' 'github' %}"
-                                                   class="btn btn-link btn-lg active btn-block">Sign in with GitHub</a>
+                                               class="btn btn-link btn-lg active btn-block">Sign in with GitHub</a>
                                             <a href="{% url 'social:begin' 'google-oauth2' %}"
-                                                   class="btn btn-link btn-lg active btn-block">Sign in with Google</a>
+                                               class="btn btn-link btn-lg active btn-block">Sign in with Google</a>
                                             <hr>
                                             <p class="text-center"><strong>OR</strong></p>
                                             <hr>
@@ -42,8 +42,8 @@
                                 <div class="form-row">
                                     <div class="col-md-10 offset-md-1">
                                         <div class="form-group">
-                                          <label class="small mb-1">Password</label>
-                                          {{ form.password }}
+                                            <label class="small mb-1">Password</label>
+                                            {{ form.password }}
                                         </div>
                                     </div>
                                 </div>
@@ -59,7 +59,8 @@
                                 <div class="form-row">
                                     <div class="col-md-10 offset-md-1">
                                         <div class="form-group mt-0 mb-1">
-                                          <button name="login" class="col-md-12 btn btn-dark" id="login">Sign in</button>
+                                            <button name="login" class="col-md-12 btn btn-dark" id="login">Sign in
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -75,5 +76,5 @@
                 </div>
             </div>
         </div>
-     </div>
+    </div>
 {% endblock content %}

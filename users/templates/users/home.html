@@ -36,7 +36,7 @@
             que voulez vous reparer ?
         </p>
 
-    <div class="d-flex"  style="background: grey; ">
+        <div class="d-flex" style="background: grey; ">
             {% for marque in marques %}
                 <div style="display: flex; flex-direction: column; width: 10%; text-align: center;">
                     <img src="{{ marque.logo.url }}" alt="">
@@ -53,7 +53,7 @@
             {% endfor %}
         </div>
 
-     <div class="d-flex">
+        <div class="d-flex">
             {% for device in appareil %}
                 <div style="border: solid 1px grey; display: flex; flex-direction: column; width: 33%;text-align: center;">
                     <h1>{{ device.name }}</h1>
@@ -61,8 +61,6 @@
                 </div>
             {% endfor %}
         </div>
-
-
 
         <hr class="my-4">
 
