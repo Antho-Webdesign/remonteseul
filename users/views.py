@@ -8,14 +8,16 @@ from django.views import View
 from django.contrib.auth.decorators import login_required
 from social_core.backends import username
 
-from boutique.models import Category
+from boutique.models import Category, Marques
 from .forms import RegisterForm, LoginForm, UpdateUserForm, UpdateProfileForm
 
 
 def home(request):
     categories = Category.objects.all()
+    marque = Marques.objects.all()
     context = {
         'categorie': categories,
+        'marques': marque,
     }
     return render(request, 'users/home.html', context)
 
