@@ -14,11 +14,11 @@ from .forms import RegisterForm, LoginForm, UpdateUserForm, UpdateProfileForm
 def home(request):
     categories = Category.objects.all()
     marque = Marques.objects.all()
-    # evice = Devices.objects.all()
+    devices = Device.objects.all()
     context = {
         'categorie': categories,
         'marques': marque,
-        # 'devices' : device,
+        'devices' : devices,
     }
     return render(request, 'users/home.html', context)
 
