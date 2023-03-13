@@ -32,10 +32,23 @@ class Device(models.Model):
     def __str__(self):
         return self.name
 
+
+class Appareils(models.Model):
+    name = models.CharField(max_length=255)
+    slug = models.SlugField(max_length=255, null=True)
+    marque = models.ForeignKey(Marques, on_delete=models.CASCADE, null=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
+    description = models.TextField(null=True)
+    image = models.ImageField(upload_to='devices/', null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Tutorial(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, null=True)
-    device = models.ForeignKey(Device, on_delete=models.CASCADE, null=True)
+    appareil = models.ForeignKey(Appareils, on_delete=models.CASCADE, null=True)
     author = models.CharField(max_length=255)
     description = models.TextField(null=True)
     duration = models.DurationField(null=True, blank=True)
@@ -45,10 +58,11 @@ class Tutorial(models.Model):
     def __str__(self):
         return self.title
 
+
 class Guide(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, null=True)
-    device = models.ForeignKey(Device, on_delete=models.CASCADE, null=True)
+    appareil = models.ForeignKey(Appareils, on_delete=models.CASCADE, null=True)
     author = models.CharField(max_length=255)
     description = models.TextField()
     format = models.CharField(max_length=255)
@@ -57,4 +71,3 @@ class Guide(models.Model):
 
     def __str__(self):
         return self.title
-

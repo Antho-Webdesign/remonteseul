@@ -7,18 +7,18 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import View
 
-from boutique.models import Category, Marques, Device
+from boutique.models import Category, Marques, Device, Appareils
 from .forms import RegisterForm, LoginForm, UpdateUserForm, UpdateProfileForm
 
 
 def home(request):
     categories = Category.objects.all()
     marque = Marques.objects.all()
-    devices = Device.objects.all()
+    appareils = Appareils.objects.all()
     context = {
         'categorie': categories,
         'marques': marque,
-        'devices' : devices,
+        'appareil': appareils,
     }
     return render(request, 'users/home.html', context)
 

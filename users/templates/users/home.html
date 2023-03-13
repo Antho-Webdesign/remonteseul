@@ -54,10 +54,10 @@
         </div>
 
      <div class="d-flex">
-            {% for dev in devices %}
+            {% for device in appareil %}
                 <div style="border: solid 1px grey; display: flex; flex-direction: column; width: 33%;text-align: center;">
-                    <h1>{{ dev.name }}</h1>
-
+                    <h1>{{ device.name }}</h1>
+                    <img src="{{ device.image.url }}" alt="">
                 </div>
             {% endfor %}
         </div>
