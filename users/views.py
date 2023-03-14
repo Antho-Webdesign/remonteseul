@@ -7,7 +7,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import View
 
-from boutique.models import Category, Marques, Device, Appareils
+from boutique.models import Category, Marques, Appareils
 from .forms import RegisterForm, LoginForm, UpdateUserForm, UpdateProfileForm
 
 
