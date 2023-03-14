@@ -36,13 +36,14 @@
                     <label class="small mb-1">Bio:</label> {{ profile_form.bio }}
                 </div>
             </div>
-            <br><br>
+
             <button type="submit" class="btn btn-dark btn-lg">Save Changes</button>
             <button type="reset" class="btn btn-dark btn-lg">Reset</button>
             {% if  user.username != 'admin' %}
                 <a class="btn btn-danger btn-lg" href="{% url 'delete_user' %}">Delete profile</a>
             {% endif %}
-
         </form>
+
     </div>
+
 {% endblock content %}
